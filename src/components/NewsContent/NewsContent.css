@@ -1,3 +1,8 @@
+body{
+    background: url("https://i0.wp.com/wallpaperswide.com/download/light_background-wallpaper-3554x1999.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
 .content {
     padding: 20px;
     display: flex;
@@ -9,7 +14,7 @@
     width: 95%;
     display: flex;
     align-items: center;
-    background: #f44336;
+    background: #12aa63;
     height: 48px;
     padding: 0 40px;
     margin: 20px 0 35px 0;

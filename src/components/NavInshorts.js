@@ -9,7 +9,7 @@ const NavInshorts = ({ setCategory }) => {
                 <HamburgerDrawer setCategory= { setCategory }/>
             </div>
 
-            <img style={{ cursor: "pointer" }} src='https://assets.inshorts.com/website_assets/images/logo_inshorts.png' height='80%' alt='logo'/>
+            <img style={{ cursor: "pointer" }} src='https://cdn5.f-cdn.com/contestentries/1418875/21876317/5ba3902c5c122_thumb900.jpg' height='80%' alt='logo'/>
         </div>
     );
 };

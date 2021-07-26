@@ -9,7 +9,7 @@ const NewsContent = ({ newsArray, newsResults, loadmore, setLoadmore }) => {
             <div className="content">
                 <div className="downloadMessage">
                     <span className="downloadText">
-                    For the best experience use inshorts app on your smartphone
+                    For the best experience use the app on your smartphone
                     </span>
                     <img src="https://assets.inshorts.com/website_assets/images/appstore.png" height="80%" alt="app store" />
                     <img src="https://assets.inshorts.com/website_assets/images/playstore.png" height="80%" alt="play store" />
