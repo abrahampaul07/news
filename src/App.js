@@ -4,22 +4,20 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import NavInshorts from "./components/NavInshorts";
 import NewsContent from "./components/NewsContent/NewsContent";
-
+import apikey from "./data/config";
 
 function App() {
     const [category, setCategory] = useState("general");
     const [newsArray, setNewsArray] = useState([]);
     const [newsResults, setNewsResults] = useState();
-    const [loadmore, setLoadmore] = useState(20);
-
-    console.log(process.env);
+    const [loadmore, setLoadMore] = useState(20);
 
 
     const newsApi=async() => {
         try{
-           
+            const proxyUrl = "https://cors-anywhere.herokuapp.com/";
             const news = await axios.get(
-                `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}&category=${category}&pageSize=${loadmore}`
+                `${proxyUrl}https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&category=${category}&pageSize=${loadmore}`
             );
             setNewsArray(news.data.articles);
             setNewsResults(news.data.totalResults);
@@ -28,18 +26,27 @@ function App() {
         }
     };
 
-    console.log(newsArray);
+    
 
     useEffect(() => {
         newsApi();
+        // eslint-disable-next-line
     }, [newsResults,category,loadmore]);
 
-    return <div className="App">
-    <NavInshorts setCategory={setCategory} />
-
-    <NewsContent setLoadmore={setLoadmore} loadmore={loadmore} newsArray={newsArray} newsResults={newsResults} />
-    <Footer />
-    </div>
-}
+    return (
+        <div className="App" id="#home">
+          <NavInshorts setCategory={setCategory} />
+          {newsResults && (
+            <NewsContent
+              newsArray={newsArray}
+              newsResults={newsResults}
+              loadmore={loadmore}
+              setLoadMore={setLoadMore}
+            />
+          )}
+          <Footer />
+        </div>
+      );
+    }
 
 export default App;
