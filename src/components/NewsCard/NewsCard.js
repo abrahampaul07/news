@@ -38,7 +38,7 @@ const NewsCard = ({ newsItem }) => {
                         {newsItem.description}
                     </div>
                     <span className="readmore">
-                        read more at{" "}
+                        Read more at{" "}
                         <a href={newsItem.url} target="_blank">
                             <b>{newsItem.source.name}</b>
                         </a>
